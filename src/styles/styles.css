@@ -1,3 +1,76 @@
+/* Botón modo oscuro */
+.DarkMode-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  margin-left: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  outline: none;
+}
+.DarkMode-btn:hover {
+  color: var(--color-accent);
+}
+/* Animaciones suaves para cambios de vista */
+#content {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
+}
+#content.view-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Footer discreto */
+.Footer {
+  width: 100%;
+  background: var(--color-secondary);
+  color: #fff;
+  padding: 1.2rem 0 1rem 0;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+.Footer-container {
+  max-width: 976px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  align-items: center;
+}
+.Footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.Footer a:hover {
+  color: var(--color-accent);
+}
+/* Botón volver atrás en vista de personaje */
+.Back-btn-container {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}
+.Back-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.Back-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-secondary);
+}
 /* Error 404 estilos */
 .Error404 {
   max-width: 400px;
@@ -49,6 +122,22 @@
   --color-card: #fff;
   --color-text: #222b45;
   --color-text-light: #6b7c93;
+}
+
+body {
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  --color-bg: #181c25;
+  --color-primary: #00bfae;
+  --color-secondary: #232946;
+  --color-accent: #ffb300;
+  --color-card: #232946;
+  --color-text: #f4f4f4;
+  --color-text-light: #bfc9d1;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 body {

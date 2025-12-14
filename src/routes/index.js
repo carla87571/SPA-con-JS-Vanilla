@@ -18,9 +18,17 @@ const router = async () => {
     const content = null || document.getElementById('content');
 
     header.innerHTML = await Header();
-    let hash = getHash();
-    let route = await resolveRoutes(hash);
-    let render = routes[route] ? routes[route] : Error404;
-    content.innerHTML = await render();
+    // Animación de transición suave
+    content.classList.remove('view-active');
+    // Espera un frame para que la transición se aplique correctamente
+    setTimeout(async () => {
+        let hash = getHash();
+        let route = await resolveRoutes(hash);
+        let render = routes[route] ? routes[route] : Error404;
+        content.innerHTML = await render();
+        // Forzar reflow y activar animación
+        void content.offsetWidth;
+        content.classList.add('view-active');
+    }, 20);
 };
 export default router;

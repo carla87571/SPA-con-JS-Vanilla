@@ -29,6 +29,9 @@ const Character = async () => {
                 <h3>Last location: ${character.location.name}</h3>
             </article>
         </div>
+        <div class="Back-btn-container">
+            <a href="#/" class="Back-btn">← Volver al listado</a>
+        </div>
     `;
     return view;
 };
