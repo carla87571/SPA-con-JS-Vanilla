@@ -1,22 +1,25 @@
+
 const Header = () => {
-    const view = `
-        <div class="Header-main">
-            <div class="Header-logo">
-                <h1>
-                    <a href="/">
-                        100tifi.co
-                    </a>
-                </h1>
+        const view = `
+        <nav class="Navbar">
+            <div class="Navbar-container">
+                <div class="Navbar-logo">
+                    <a href="/">100tifi.co</a>
+                </div>
+                <input type="checkbox" id="navbar-toggle" class="Navbar-toggle" />
+                <label for="navbar-toggle" class="Navbar-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="Navbar-links">
+                    <a href="#/">Home</a>
+                    <a href="#/about">About</a>
+                </div>
             </div>
-        </div class="Header-nav">
-            <a href="#/about">About</a>
-
-        <div>
-
-        </div>
-    `;
-        
-    return view;
+        </nav>
+        `;
+        return view;
 };
 
 export default Header;
