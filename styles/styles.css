@@ -268,17 +268,22 @@ body {
 }
 
 
+/* Tarjeta de personaje mejorada */
 .Characters-card {
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(39,44,49,0.10), 0 1.5px 4px rgba(39,44,49,0.08);
   border-radius: 16px;
-  margin: 0 0 24px 0;
-  display: block;
-  background: #fff;
+  margin: 0 auto 24px auto;
+  background: var(--color-card);
   overflow: hidden;
   transition: box-shadow 0.3s, transform 0.3s;
   animation-duration: 2s;
   animation-name: fade;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
 .Characters-card:hover {
@@ -287,10 +292,12 @@ body {
   cursor: pointer;
 }
 
+/* Imagen de personaje */
 .Characters-card img {
   width: 100%;
   height: auto;
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px;
+  margin-bottom: 1rem;
   transition: filter 0.3s;
 }
 .Characters-card:hover img {
@@ -299,21 +306,51 @@ body {
 
 .Characters-card h2 {
   font-size: 20px;
-  background: var(--color-card);
+  background: none;
   text-align: center;
-  margin: 16px 0 8px 0;
+  margin: 8px 0 4px 0;
   color: #15302C;
   letter-spacing: 0.5px;
 }
 
 .Characters-card h3 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
-  margin: 16px 0 8px 0;
+  margin: 8px 0 4px 0;
   color: var(--color-secondary);
   letter-spacing: 0.5px;
   font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* Elimina recuadros en blanco debajo */
+.Characters-card > *:empty {
+  display: none;
+}
+
+/* Grid de cartas en Home responsive */
+.Characters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 600px) {
+  .Characters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 900px) {
+  .Characters {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Ajusta las cartas individuales */
+.Characters-card {
+  box-sizing: border-box;
+}
 
 .Characters-item {
   text-decoration: none;
