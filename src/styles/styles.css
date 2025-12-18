@@ -260,11 +260,26 @@ body {
   display: grid;
 }
 
+/* Layout de detalle de personaje: dos tarjetas lado a lado en desktop, apiladas en móvil */
 .Characters-inner {
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 1.5rem;
-  grid-row-gap: 1.5em;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+@media (min-width: 700px) {
+  .Characters-inner {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .Characters-card {
+    min-width: 280px;
+    max-width: 350px;
+  }
+}
 }
 
 
